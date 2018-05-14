@@ -1,14 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      GeoData
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h6 class="text-center">Bem-vindo ao GeoData!</h6>
+
+  <ion-item>
+    <ion-label>Selecione o continente:</ion-label>
+    <ion-select>
+      <ion-option selected>All</ion-option>
+      <ion-option>Asia</ion-option>
+      <ion-option>Africa</ion-option>
+      <ion-option>America</ion-option>
+      <ion-option>Europe</ion-option>
+      <ion-option>Oceania</ion-option>
+    </ion-select>
+
+  </ion-item>
+  <button ion-button block (click)="searchCountry()">Search</button>
 </ion-content>
