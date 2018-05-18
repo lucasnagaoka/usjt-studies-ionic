@@ -14,27 +14,11 @@
 
 <ion-content padding>
   <ion-list>
-      <button ion-item (click)="showDetails('Brazil')">
+      <button ion-item *ngFor="let country of countries" (click)="showDetails('Brazil')">
       <ion-avatar item-start>
         <img src="../../assets/imgs/brazil-flag.png">
       </ion-avatar>
       <h2>{{country.name}}</h2>
-      <p>Info</p>
-    </button>
-
-    <button ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/brazil-flag.png">
-      </ion-avatar>
-      <h2>Brazil</h2>
-      <p>Info</p>
-    </button>
-
-    <button ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/brazil-flag.png">
-      </ion-avatar>
-      <h2>Brazil</h2>
       <p>Info</p>
     </button>
   </ion-list>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CountryDetailPage } from '../country-detail/country-detail';
+import { Country } from '../../model/country';
 
 /**
  * Generated class for the CountryListPage page.
@@ -15,11 +16,13 @@ import { CountryDetailPage } from '../country-detail/country-detail';
   templateUrl: 'country-list.html',
 })
 export class CountryListPage {
-  public country: any;
+  public countries: Country[];
+  public country: Country;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.country = {name: "Brazil"}
-    console.log(this.country);
+    this.country = {name: "Brazil"};
+    this.countries = [this.country, this.country, this.country]
+    console.log(this.countries);
   }
 
   ionViewDidLoad() {
@@ -27,8 +30,8 @@ export class CountryListPage {
   }
 
   public showDetails(name: string) {
-    console.log(`Nome: ${name}`)
-    this.navCtrl.push(CountryDetailPage);
+    console.log(`País: ${name}`)
+    this.navCtrl.push(CountryDetailPage, {countryName: name});
   }
 
 }

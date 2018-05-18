@@ -13,11 +13,7 @@
     <ion-label>Selecione o continente:</ion-label>
     <ion-select>
       <ion-option selected>All</ion-option>
-      <ion-option>Asia</ion-option>
-      <ion-option>Africa</ion-option>
-      <ion-option>America</ion-option>
-      <ion-option>Europe</ion-option>
-      <ion-option>Oceania</ion-option>
+      <ion-option *ngFor="let continent of continents">{{continent.name}}</ion-option>>
     </ion-select>
 
   </ion-item>
