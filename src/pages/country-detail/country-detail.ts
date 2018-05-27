@@ -15,11 +15,10 @@ import { Country } from '../../model/country';
   templateUrl: 'country-detail.html',
 })
 export class CountryDetailPage {
-  public country: Country = {name: ""};
+  public country: Country = {name: "", area: 0, population: 0, alpha3Code: ""};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.country.name = this.navParams.get("countryName");
-    console.log(this.country);
+    this.country = this.navParams.get("country");
   }
 
   ionViewDidLoad() {

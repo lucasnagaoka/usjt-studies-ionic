@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CountryListPage } from '../country-list/country-list';
 import { Continent } from '../../model/continent';
+import { Country } from '../../model/country';
+import { CountryProvider } from '../../providers/country/country';
 
 @Component({
   selector: 'page-home',
@@ -9,7 +11,8 @@ import { Continent } from '../../model/continent';
 })
 export class HomePage {
   public continents: Continent[];
-
+  public continent: Continent;
+  public countries: Country[];
 
   constructor(public navCtrl: NavController) {
     let c1 = {name: "Americas"};
@@ -20,7 +23,12 @@ export class HomePage {
     this.continents = [c1, c2, c3, c4, c5];
   }
 
-  public searchCountry() {
-    this.navCtrl.push(CountryListPage);
+  ionViewDidLoad() {}
+
+  public searchCountry(continent: string) {
+    if(typeof continent != 'string') {
+      continent = 'All';
+    }
+    this.navCtrl.push(CountryListPage, { continent: continent });
   }
 }
